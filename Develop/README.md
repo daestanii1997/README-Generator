@@ -1,8 +1,8 @@
 
-# eh
+# readme generator
  
 ## Description
-eh
+readme file generator
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,22 +13,22 @@ eh
 - [Questions](#questions)
 
 ## Installation
-eh
+n/a
      
 ## Usage
 
-eh
+n/a
 
 ## License
 MIT
 
 ## Contributing
-eh
+n/a
 
 ## Tests
-eh
+n/a
     
 ## Questions
-[Github](github.com/eh)
-eh 
+[Github](github.com/daestanii1997)
+email@email.com 
     
