@@ -3,38 +3,40 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create an array of questions for user input
 const writeToFile = ({ name, description, installation, usage, license, contributing, tests, username, email }) =>
-    `# ${name}
+    `
+# ${name}
  
-    ## Description
-    ${description}
+## Description
+${description}
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    ## Installation
-    ${installation}
+## Installation
+${installation}
      
-    ## Usage
+## Usage
 
-    ${usage}
+${usage}
 
-    ## License
-    ${license}
+## License
+${license}
 
-    ## Contributing
-    ${contributing}
+## Contributing
+${contributing}
 
-    ## Tests
-    ${tests}
+## Tests
+${tests}
     
-    ## Questions
-    [Github](github.com/${username})
-    ${email} `;
+## Questions
+[Github](github.com/${username})
+${email} 
+    `;
 
 inquirer
     .prompt([
@@ -59,7 +61,7 @@ inquirer
             message: 'Provide instructions and examples of usage.',
         },
         {
-            type: 'input',
+            type: 'list',
             name: 'license',
             message: 'Which license will you be using?',
             choices: ['MIT', 'Apache 2.0', 'Boost Software', 'Eclipse Public 2.0'],
