@@ -2,9 +2,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create an array of questions for user input
-const questions = ({ name, description, usage, link }) =>
-
-    writeToFile();
+const writeToFile = ({name, description, usage, link}) =>
+    `# ${name}
+ 
+     ## Desctiption
+     ${description}
+ 
+     ## usage
+     ${usage}
+ 
+     ## link
+     ${link} `;
 
 inquirer
     .prompt([
@@ -28,30 +36,12 @@ inquirer
             name: 'link',
             message: 'Please enter the link for your project.',
         },
-    ]);
+    ]) 
+    .then((answers) => {
 
-// TODO: Create a function to write README file
-function writeToFile(questions) {
-    // return 
-    // # ${questions.name}
+        const readMeFile = writeToFile(answers);
 
-    // ## Desctiption
-    // ${questions.description}
-
-    // ## usage
-    // ${questions.usage}
-
-    // ## link
-    // ${questions.link} 
-}
-
-// TODO: Create a function to initialize app
-function init() {
-    const readMeFile = questions(answers);
-
-    fs.writeFile('README.md', readMeFile, (err) =>
-        err ? console.log(err) : console.log('A README file has been created!'))
-}
-
-// Function call to initialize app
-init();
+        fs.writeFile('README.md', readMeFile, (err) =>
+            err ? console.log(err) : console.log('A README file has been created!')
+            );
+    }) 
